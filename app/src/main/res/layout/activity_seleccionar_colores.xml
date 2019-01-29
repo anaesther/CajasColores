@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:id="@+id/a"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".SeleccionarColores"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:id="@+id/b"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/c"
+            android:layout_width="match_parent"
+            android:layout_height="0px"
+            android:orientation="horizontal"
+            android:layout_weight="1">
+
+            <LinearLayout
+                android:id="@+id/uno"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/colorAzulPerla"
+                android:orientation="horizontal"
+                android:onClick="seleccionar"
+                android:layout_weight="1">
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/d"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_weight="1">
+
+                <LinearLayout
+                    android:id="@+id/e"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:layout_weight="1">
+
+                    <LinearLayout
+                        android:id="@+id/dos"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:background="@color/colorGrisClaro"
+                        android:onClick="seleccionar"
+                        android:layout_weight="1">
+                    </LinearLayout>
+                    <LinearLayout
+                        android:id="@+id/tres"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:background="@color/colorGrisOscuro"
+                        android:onClick="seleccionar"
+                        android:layout_weight="1">
+                    </LinearLayout>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/f"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:layout_weight="1">
+
+                    <LinearLayout
+                        android:id="@+id/cuatro"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:background="@color/colorGrisOscuro"
+                        android:onClick="seleccionar"
+                        android:layout_weight="1">
+                    </LinearLayout>
+                    <LinearLayout
+                        android:id="@+id/cinco"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:background="@color/colorAnaranjado"
+                        android:onClick="seleccionar"
+                        android:layout_weight="1">
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/g"
+            android:layout_width="match_parent"
+            android:layout_height="0px"
+            android:orientation="horizontal"
+            android:layout_weight="1">
+
+            <LinearLayout
+                android:id="@+id/seis"
+                android:layout_width="0px"
+                android:layout_height="match_parent"
+                android:background="@color/colorCian"
+                android:orientation="horizontal"
+                android:onClick="seleccionar"
+                android:layout_weight="1">
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/siete"
+                android:layout_width="0px"
+                android:layout_height="match_parent"
+                android:background="@color/colorAnaranjado"
+                android:orientation="horizontal"
+                android:onClick="seleccionar"
+                android:layout_weight="1">
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/ocho"
+                android:layout_width="0px"
+                android:layout_height="match_parent"
+                android:background="@color/colorGrisClaro"
+                android:orientation="horizontal"
+                android:onClick="seleccionar"
+                android:layout_weight="1">
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/nueve"
+                android:layout_width="0px"
+                android:layout_height="match_parent"
+                android:background="@color/colorAzulPerla"
+                android:orientation="horizontal"
+                android:onClick="seleccionar"
+                android:layout_weight="1">
+            </LinearLayout>
+
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/h"
+            android:layout_width="match_parent"
+            android:layout_height="0px"
+            android:orientation="horizontal"
+            android:layout_weight="1">
+
+            <LinearLayout
+                android:id="@+id/diez"
+                android:layout_width="0px"
+                android:layout_height="match_parent"
+                android:background="@color/colorVerdeClaro"
+                android:orientation="horizontal"
+                android:onClick="seleccionar"
+                android:layout_weight="1">
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/once"
+                android:layout_width="0px"
+                android:layout_height="match_parent"
+                android:background="@color/colorAzulPerla"
+                android:orientation="horizontal"
+                android:onClick="seleccionar"
+                android:layout_weight="1">
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/doce"
+                android:layout_width="0px"
+                android:layout_height="match_parent"
+                android:background="@color/colorGrisOscuro"
+                android:orientation="horizontal"
+                android:onClick="seleccionar"
+                android:layout_weight="1">
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+<!--
+    <android.support.v7.widget.AppCompatImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/pajaro"
+        />
+-->
+
+    <Chronometer
+        android:id="@+id/crono"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:layout_gravity="right"
+        android:layout_margin="10dp"
+        android:textColor="@color/colorBlanco"/>
+<!--
+    <Button
+        android:id="@+id/btnEmpezar"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:textSize="20sp"
+        android:layout_gravity="bottom"
+        android:layout_marginBottom="60dp"
+        android:text="Empezar"
+        android:onClick="empezar"/>
+-->
+    <TextView
+        android:id="@+id/verPuntuaciones"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:textSize="20sp"
+        android:textColor="@color/colorBlanco"
+        android:text="" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/play"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/play"
+        android:elevation="6dp"
+        android:layout_gravity="end|bottom"
+        android:layout_margin="40dp"
+        android:backgroundTint="@color/colorVerde"
+        app:borderWidth="0dp"
+        android:onClick="empezar"/>
+
+</FrameLayout>
