@@ -47,11 +47,13 @@ public class Puntuaciones2 {
         Log.d(APP, "Clase Puntuaciones2, constructor");
         puntuaciones = Collections.synchronizedList(new ArrayList<Puntuacion>());
         recuperarPuntuaciones(context);
+        Log.d(APP, "XX");
     }
 
     public List<Puntuacion> getPuntuaciones(Context context) throws JSONException {
         Log.d(APP, "Clase Puntuaciones2, getPuntuaciones");
         recuperarPuntuaciones(context);
+        Log.d(APP, "XX");
         return puntuaciones;
     }
 
@@ -59,6 +61,7 @@ public class Puntuaciones2 {
         puntuaciones.add(new Puntuacion(nombre, puntuacion));
         //this.puntuaciones = puntuaciones;
         guardarPuntuaciones(context);
+        Log.d(APP, "XX");
     }
 
     private void guardarPuntuaciones(Context context){
@@ -70,6 +73,7 @@ public class Puntuaciones2 {
         SharedPreferences.Editor editor = datosGuardados.edit();
         editor.putString(clavePuntuaciones, json);
         editor.commit();
+        Log.d(APP, "XX");
     }
 
     private void recuperarPuntuaciones(Context context) throws JSONException {
@@ -85,6 +89,7 @@ public class Puntuaciones2 {
                 puntuaciones.add(new Puntuacion(jsonobject.getString("nombre"), jsonobject.getLong("puntuacion")));
             }
         }
+        Log.d(APP, "XX");
     }
 
 

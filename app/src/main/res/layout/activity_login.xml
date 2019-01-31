@@ -7,13 +7,60 @@
     android:background="@color/colorAzulPerla"
     tools:context=".Login">
 
+    <basico.android.cctic.edu.cajascolor.RoundedCornerLayout
+        android:id="@+id/foto"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/textView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <ImageView
+            android:id="@+id/setFoto"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/retrato"/>
+
+    </basico.android.cctic.edu.cajascolor.RoundedCornerLayout>
+
+    <ImageButton
+        android:id="@+id/seleccionar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="8dp"
+        android:backgroundTint="@color/colorAzulPerla"
+        android:src="@drawable/selectfoto"
+        android:onClick="buscarFoto"
+        app:layout_constraintStart_toEndOf="@+id/foto"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/sacarFoto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="8dp"
+        android:backgroundTint="@color/colorAzulPerla"
+        android:onClick="tomarFoto"
+        android:src="@drawable/takefoto"
+        app:layout_constraintStart_toEndOf="@+id/foto"
+        app:layout_constraintTop_toBottomOf="@+id/seleccionar" />
+
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
-        android:layout_marginTop="96dp"
+        android:layout_marginTop="152dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:text="Introduce tu nombre"

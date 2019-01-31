@@ -15,6 +15,7 @@ public class Puntuaciones {
     private static final String clavePuntuaciones = "puntos";
 
     public Puntuaciones(Context context) {
+        Log.d(APP, "Class Puntuaciones, constructor");
         puntuaciones = new ArrayList<Integer>();
         Log.d(APP, "He inicializado el arraylist de puntuaciones");
         SharedPreferences datosGuardados = context.getSharedPreferences(FILE, Context.MODE_PRIVATE);
@@ -29,15 +30,16 @@ public class Puntuaciones {
                 puntuaciones.add(Integer.parseInt(puntuacionesString[i]));
             }
         }
-        Log.d(APP, "He terminado el constructor de puntuaciones");
+        Log.d(APP, "XX");
     }
 
     public ArrayList<Integer> getPuntuaciones() {
+        Log.d(APP, "Class Puntuaciones, getPuntuaciones XX");
         return puntuaciones;
     }
 
     public void nuevaPuntuacion(int segundos, Context context){
-        Log.d(APP, "He terminado el constructor de puntuaciones");
+        Log.d(APP, "Class Puntuaciones, nuevaPuntuacion");
         puntuaciones.add(segundos);
         for (int i=0; i<puntuaciones.size()-1; i++){
             for (int j=0; j<puntuaciones.size()-(i+1); j++){
@@ -50,10 +52,11 @@ public class Puntuaciones {
         }
         Log.d(APP, "Segundos "+segundos+" puntuaciones en el array "+puntuaciones.size());
         guardarPuntuaciones(context);
+        Log.d(APP, "XX");
     }
 
     private void guardarPuntuaciones(Context context){
-        Log.d(APP, "Voy a guardar la puntuación");
+        Log.d(APP, "Class Puntuaciones, guardarPuntuaciones");
         String puntuacionesString = "";
         SharedPreferences datosGuardados = context.getSharedPreferences(FILE, Context.MODE_PRIVATE);
         Log.d(APP, "He recuperado el archivo xml");
@@ -70,6 +73,6 @@ public class Puntuaciones {
         // puntuacionesString = ""; para resetear las puntuaciones
         editor.putString(clavePuntuaciones, puntuacionesString);
         editor.commit();
-        Log.d(APP, "Commit hecho");
+        Log.d(APP, "XX");
     }
 }
