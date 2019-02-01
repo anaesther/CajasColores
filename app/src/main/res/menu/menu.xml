@@ -3,6 +3,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
     <item
+        android:id="@+id/menuPuntos"
+        android:icon="@drawable/estrella"
+        android:title="Ver puntos"
+        app:showAsAction="ifRoom"/>
+    <item
         android:id="@+id/menuNombre"
         android:icon="@drawable/face"
         android:title="Cambio usuario"

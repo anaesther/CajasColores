@@ -114,8 +114,8 @@ public class SeleccionarColores extends AppCompatActivity {
         Log.d(APP, "XX");
     }
 
-    public void tocarCuadro(View v){
-        Log.d(APP, "Class SeleccionarColores, tocarCuadro");
+    public void comprobarCuadroTocado(View v){
+        Log.d(APP, "Class SeleccionarColores, comprobarCuadroTocado");
         //if(findViewById(R.id.btnEmpezar).getTag() != null) {//versión anterior con Button
         if(findViewById(R.id.play).getTag() != null) {
             Log.d(APP, " Voy a recoger la tag");
@@ -130,11 +130,11 @@ public class SeleccionarColores extends AppCompatActivity {
             // int colortocado = getResources().getColor(R.color.colorTocado); // recupero mi color tocado de los recursos (debería ser de clase)
             // if (color != colortocado) { // si el color de la caja no coincide con el color tocado
             //////////////////////////////////////////
-            if (tocado == null) { //si es la primera partida
+            if (tocado == null || !(boolean)tocado) { //si es la primera partida o si se está jugando por segunda vez o más
                 tocarCaja(v);
-            } else if (!(boolean)tocado) { // si se está jugando por segunda vez o más
+            } /*else if () { // si se está jugando por segunda vez o más
                 tocarCaja(v);
-            }
+            }*/
         }
         Log.d(APP, "XX");
     }
@@ -207,7 +207,7 @@ public class SeleccionarColores extends AppCompatActivity {
     }
 
     private void verPuntuaciones() {
-        Log.d(APP, "Class SeleccionarColores, verPuntuaciones");
+        Log.d(APP, "Class SeleccionarColores, VerPuntuaciones");
         agregarPuntuacion();
         ArrayList<Integer> puntuaciones;
         String mejoresPuntuaciones = "MEJORES TIEMPOS DE "+usuario+"\r\n";
@@ -306,15 +306,15 @@ public class SeleccionarColores extends AppCompatActivity {
         if (id_item == R.id.menuNombre){ // hay que buscar cuál ha sido el botón del menú pulsado
             Intent intent = new Intent(this, Login.class);
             intent.putExtra("Cambio", true);
-            /*
-            startActivity(intent);
-            finish();
-            */
             startActivityForResult(intent, 1);// se lanza esto para que la acción vuelva a esta pantalla otra vez
             // la pantalla siguiente tendrá que hacer: setResult (RESULT_OK, intent_de_vuelta);
         } else if (id_item == android.R.id.home){ // esta no es la R de mi proyecto, es la de android
             // se ha pulsado el botón de volver del menú superior
             super.onBackPressed();
+        } else if (id_item == R.id.menuPuntos){
+            Log.d(APP, " He seleccionado ver los récords");
+            Intent intent = new Intent(this, VerPuntuaciones.class);
+            startActivity(intent); // en principio no espero ningún resultado, aunque espero volver, ¿esta es la mejor opción?
         }
         Log.d(APP, "XX");
         return super.onOptionsItemSelected(item);
@@ -326,7 +326,7 @@ public class SeleccionarColores extends AppCompatActivity {
         if (requestCode == 1){// El número que se le haya pasado en el startAtivityForResult (debería ser una constante)
             if (resultCode == RESULT_OK){
                 Log.d(APP, " result ok");
-
+                usuario = Preferencias.getUsuario(this);
             } else if (resultCode == RESULT_CANCELED){
                 Log.d(APP, " result canceled");
             }

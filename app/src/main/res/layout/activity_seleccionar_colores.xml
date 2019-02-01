@@ -26,7 +26,7 @@
                 android:layout_height="match_parent"
                 android:background="@color/colorAzulPerla"
                 android:orientation="horizontal"
-                android:onClick="tocarCuadro"
+                android:onClick="comprobarCuadroTocado"
                 android:layout_weight="1">
 
             </LinearLayout>
@@ -51,7 +51,7 @@
                         android:layout_height="match_parent"
                         android:orientation="vertical"
                         android:background="@color/colorGrisClaro"
-                        android:onClick="tocarCuadro"
+                        android:onClick="comprobarCuadroTocado"
                         android:layout_weight="1">
                     </LinearLayout>
                     <LinearLayout
@@ -60,7 +60,7 @@
                         android:layout_height="match_parent"
                         android:orientation="vertical"
                         android:background="@color/colorGrisOscuro"
-                        android:onClick="tocarCuadro"
+                        android:onClick="comprobarCuadroTocado"
                         android:layout_weight="1">
                     </LinearLayout>
 
@@ -78,7 +78,7 @@
                         android:layout_height="match_parent"
                         android:orientation="vertical"
                         android:background="@color/colorGrisOscuro"
-                        android:onClick="tocarCuadro"
+                        android:onClick="comprobarCuadroTocado"
                         android:layout_weight="1">
                     </LinearLayout>
                     <LinearLayout
@@ -87,7 +87,7 @@
                         android:layout_height="match_parent"
                         android:orientation="vertical"
                         android:background="@color/colorAnaranjado"
-                        android:onClick="tocarCuadro"
+                        android:onClick="comprobarCuadroTocado"
                         android:layout_weight="1">
                     </LinearLayout>
 
@@ -109,7 +109,7 @@
                 android:layout_height="match_parent"
                 android:background="@color/colorCian"
                 android:orientation="horizontal"
-                android:onClick="tocarCuadro"
+                android:onClick="comprobarCuadroTocado"
                 android:layout_weight="1">
             </LinearLayout>
             <LinearLayout
@@ -118,7 +118,7 @@
                 android:layout_height="match_parent"
                 android:background="@color/colorAnaranjado"
                 android:orientation="horizontal"
-                android:onClick="tocarCuadro"
+                android:onClick="comprobarCuadroTocado"
                 android:layout_weight="1">
             </LinearLayout>
             <LinearLayout
@@ -127,7 +127,7 @@
                 android:layout_height="match_parent"
                 android:background="@color/colorGrisClaro"
                 android:orientation="horizontal"
-                android:onClick="tocarCuadro"
+                android:onClick="comprobarCuadroTocado"
                 android:layout_weight="1">
             </LinearLayout>
             <LinearLayout
@@ -136,7 +136,7 @@
                 android:layout_height="match_parent"
                 android:background="@color/colorAzulPerla"
                 android:orientation="horizontal"
-                android:onClick="tocarCuadro"
+                android:onClick="comprobarCuadroTocado"
                 android:layout_weight="1">
             </LinearLayout>
 
@@ -154,7 +154,7 @@
                 android:layout_height="match_parent"
                 android:background="@color/colorVerdeClaro"
                 android:orientation="horizontal"
-                android:onClick="tocarCuadro"
+                android:onClick="comprobarCuadroTocado"
                 android:layout_weight="1">
             </LinearLayout>
             <LinearLayout
@@ -163,7 +163,7 @@
                 android:layout_height="match_parent"
                 android:background="@color/colorAzulPerla"
                 android:orientation="horizontal"
-                android:onClick="tocarCuadro"
+                android:onClick="comprobarCuadroTocado"
                 android:layout_weight="1">
             </LinearLayout>
             <LinearLayout
@@ -172,7 +172,7 @@
                 android:layout_height="match_parent"
                 android:background="@color/colorGrisOscuro"
                 android:orientation="horizontal"
-                android:onClick="tocarCuadro"
+                android:onClick="comprobarCuadroTocado"
                 android:layout_weight="1">
             </LinearLayout>
 
