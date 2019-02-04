@@ -242,4 +242,11 @@
         app:borderWidth="0dp"
         android:visibility="invisible"/>
 
+    <ImageView
+        android:id="@+id/animacion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="false"
+        android:layout_gravity="center"/>
+
 </FrameLayout>

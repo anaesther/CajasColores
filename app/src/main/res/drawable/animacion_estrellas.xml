@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animation-list android:id="@+id/selected1"
+    android:oneshot="false"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@drawable/estrellas1" android:duration="50" />
+    <item android:drawable="@drawable/estrellas2" android:duration="50" />
+    <item android:drawable="@drawable/estrellas3" android:duration="100" />
+    <item android:drawable="@drawable/estrellas4" android:duration="100" />
+    <item android:drawable="@drawable/estrellas5" android:duration="100" />
+    <item android:drawable="@drawable/estrellas6" android:duration="100" />
+    <item android:drawable="@drawable/estrellas7" android:duration="100" />
+    <item android:drawable="@drawable/estrellas8" android:duration="100" />
+    <item android:drawable="@drawable/estrellas9" android:duration="100" />
+    <item android:drawable="@drawable/estrellas10" android:duration="100" />
+    <item android:drawable="@drawable/estrellas11" android:duration="100" />
+    <item android:drawable="@drawable/estrellas12" android:duration="100" />
+    <item android:drawable="@drawable/estrellas13" android:duration="100" />
+</animation-list>

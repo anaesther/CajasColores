@@ -4,6 +4,7 @@ import android.app.ActionBar;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
+import android.graphics.drawable.AnimationDrawable;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.media.MediaPlayer;
@@ -20,6 +21,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Chronometer;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -203,6 +205,8 @@ public class SeleccionarColores extends AppCompatActivity {
         segundos = 0;
         tocadas = 0;
         ((TextView)findViewById(R.id.verPuntuaciones)).setText("");
+        ImageView animacion = findViewById(R.id.animacion);
+        animacion.setBackgroundResource(0);
         Log.d(APP, "XX");
     }
 
@@ -217,6 +221,9 @@ public class SeleccionarColores extends AppCompatActivity {
         Log.d(APP, " Voy a escribir las puntuaciones en pantalla");
         if (puntuaciones.size() > 0) {
             mejoresPuntuaciones += "1º)  " + puntuaciones.get(0);
+            if (segundos <= puntuaciones.get(0)){
+                mostrarAnimacion();
+            }
         }
         if (puntuaciones.size() > 1) {
             mejoresPuntuaciones += "\r\n2º)  " + puntuaciones.get(1);
@@ -224,8 +231,15 @@ public class SeleccionarColores extends AppCompatActivity {
         if (puntuaciones.size() > 2) {
             mejoresPuntuaciones += "\r\n3º)  " + puntuaciones.get(2);
         }
-        ((TextView)findViewById(R.id.verPuntuaciones)).setText(mejoresPuntuaciones);
+        //((TextView)findViewById(R.id.verPuntuaciones)).setText(mejoresPuntuaciones); Ya no lo muestro aquí, tengo la pantalla de puntuaciones
         Log.d(APP, "XX");
+    }
+
+    private void mostrarAnimacion(){
+        ImageView animacion = findViewById(R.id.animacion);
+        animacion.setBackgroundResource(R.drawable.animacion_estrellas);
+        AnimationDrawable fondoAnimado = (AnimationDrawable) animacion.getBackground();
+        fondoAnimado.start();
     }
 
     private void agregarPuntuacion(){

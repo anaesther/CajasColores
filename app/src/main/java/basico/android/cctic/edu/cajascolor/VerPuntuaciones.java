@@ -66,22 +66,22 @@ public class VerPuntuaciones extends AppCompatActivity {
 
     public void ordenarPorNombre(View v){
         Collections.sort(datos, new ComparadorPuntuaciones());
-        adaptador = new AdapterPuntuaciones(datos);
+        adaptador = new AdapterPuntuaciones(datos, this);
         repintarPuntuaciones();
     }
 
     public void ordenarPorTiempo(View v){
         Collections.sort(datos);
-        adaptador = new AdapterPuntuaciones(datos);
+        adaptador = new AdapterPuntuaciones(datos, this);
         repintarPuntuaciones();
     }
 
     private void repintarPuntuaciones(){
-        adaptador = new AdapterPuntuaciones(datos);
+        adaptador = new AdapterPuntuaciones(datos, this);
         recView = (RecyclerView) findViewById(R.id.recycler);
         recView.setAdapter(adaptador);//mostrando la lista
         recView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
-        //ITEM DECORATOR --> OPCIONAL
-        recView.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL));
+        if (recView.getItemDecorationCount() == 0)
+            recView.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL));
     }
 }

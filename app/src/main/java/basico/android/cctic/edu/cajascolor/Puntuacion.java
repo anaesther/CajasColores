@@ -1,8 +1,12 @@
 package basico.android.cctic.edu.cajascolor;
 
+import android.os.Parcel;
+import android.os.Parcelable;
 import android.util.Log;
 
-public class Puntuacion  implements Comparable {
+import java.io.Serializable; // dejamos de usar serializable porque parcelable es más eficiente
+
+public class Puntuacion  implements Comparable, Parcelable {
 
     private String nombre;
     private long puntuacion;
@@ -16,6 +20,23 @@ public class Puntuacion  implements Comparable {
         this.puntuacion = puntuacion;
         Log.d(APP, "XX");
     }
+
+    protected Puntuacion(Parcel in) {
+        nombre = in.readString();
+        puntuacion = in.readLong();
+    }
+
+    public static final Creator<Puntuacion> CREATOR = new Creator<Puntuacion>() {
+        @Override
+        public Puntuacion createFromParcel(Parcel in) {
+            return new Puntuacion(in);
+        }
+
+        @Override
+        public Puntuacion[] newArray(int size) {
+            return new Puntuacion[size];
+        }
+    };
 
     public String getNombre() {
         Log.d(APP, "Class Puntuacion, getNombre XX");
@@ -50,5 +71,28 @@ public class Puntuacion  implements Comparable {
         //comparacion = this.nombre.compareTo(((Puntuacion)o).getNombre()); // compara por orden alfabético
         Log.d(APP, "XX");
         return comparacion;
+    }
+
+    @Override
+    public String toString() {
+        return "Nombre: "+nombre+", puntuación: "+puntuacion;
+    }
+
+    //Este método y el siguiente hay que ponerlos porque implementamos parcelable
+    // parcelable es como Serializable, pero más eficiente
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(nombre);
+        dest.writeLong(puntuacion);
+    }
+
+    private void readFromParcel(Parcel in) {
+        nombre = in.readString();
+        puntuacion = in.readLong();
     }
 }
