@@ -26,9 +26,11 @@ public class VerPuntuacion extends AppCompatActivity {
     }
 
     private void pintarPuntuacion(){
+        Log.d(APP, "Class VerPuntuacion, pintarPuntuacion");
         TextView caja = findViewById(R.id.puntuacion);
-        String texto = puntuacion.getNombre()+"\r\n"+puntuacion.getPuntuacion();
+        String texto = puntuacion.getNombre()+"\r\n\r\n"+puntuacion.getPuntuacion();
         caja.setText(texto);
+        Log.d(APP, "XX");
     }
 
     @Override

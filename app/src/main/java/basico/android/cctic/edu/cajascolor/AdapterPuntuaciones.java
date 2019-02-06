@@ -19,8 +19,10 @@ public class AdapterPuntuaciones extends RecyclerView.Adapter<PuntuacionHolder> 
     Context context;
 
     public AdapterPuntuaciones (List<Puntuacion> lista_puntuaciones, Context context) {
+        Log.d(APP, "Class AdapterPuntuaciones, constructor");
         this.datos = lista_puntuaciones;
         this.context = context;
+        Log.d(APP, "XX");
     }
 
     @NonNull
@@ -59,16 +61,10 @@ public class AdapterPuntuaciones extends RecyclerView.Adapter<PuntuacionHolder> 
         //String nombre = ((TextView)((ViewGroup)((ViewGroup)v).getChildAt(1)).getChildAt(0)).getText().toString();
         //String puntuacion = ((TextView)((ViewGroup)((ViewGroup)v).getChildAt(2)).getChildAt(0)).getText().toString();
         ////////// buscar en el view directamente con el id de las cajas
-        Log.d(APP, "1");
         String nombre = ((TextView)v.findViewById(R.id.nombre_jugador)).getText().toString();
-        Log.d(APP, "2");
-        //Log.d(APP, ((TextView)v.findViewById(R.id.nombre_jugador)).getText().toString());
         Long puntuacion = Long.parseLong(((TextView)v.findViewById(R.id.tiempo_jugador)).getText().toString());
-        Log.d(APP, "3");
         Puntuacion p = new Puntuacion(nombre, puntuacion);
-        Log.d(APP, "4");
         i.putExtra("puntuacion", p);
-        Log.d(APP, "5");
         context.startActivity(i);
         Log.d(APP, "XX");
     }

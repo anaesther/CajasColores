@@ -26,6 +26,7 @@ public class PuntuacionHolder extends RecyclerView.ViewHolder{
         caja_nombre_jugador.setText(p.getNombre());
         if (position%2 == 0){//para que me pinte de colores diferentes los campos pares, pero no repinta bien al desplazar
             itemView.findViewById(R.id.contenedorPuntuacion).setBackgroundColor(itemView.getResources().getColor(R.color.colorGrisClaro));
+            Log.d(APP, "Repinto con otro color!!");
         }
         Log.d(APP, "XX");
     }

@@ -15,15 +15,17 @@ public class Puntuacion  implements Comparable, Parcelable {
     public Puntuacion(){}
 
     public Puntuacion(String nombre, long puntuacion){
-        Log.d(APP, "Class Puntuacion, constructor");
+        Log.d(APP, "Class Puntuacion, constructor(String, long)");
         this.nombre = nombre;
         this.puntuacion = puntuacion;
         Log.d(APP, "XX");
     }
 
     protected Puntuacion(Parcel in) {
+        Log.d(APP, "Class Puntuacion, constructor(Parcel)");
         nombre = in.readString();
         puntuacion = in.readLong();
+        Log.d(APP, "XX");
     }
 
     public static final Creator<Puntuacion> CREATOR = new Creator<Puntuacion>() {
@@ -87,8 +89,10 @@ public class Puntuacion  implements Comparable, Parcelable {
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
+        Log.d(APP, "Class Puntuacion, writeToParcel");
         dest.writeString(nombre);
         dest.writeLong(puntuacion);
+        Log.d(APP, "XX");
     }
 
     private void readFromParcel(Parcel in) {

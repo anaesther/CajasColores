@@ -1,7 +1,5 @@
 package basico.android.cctic.edu.cajascolor;
 
-import android.app.ActionBar;
-import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.AnimationDrawable;
@@ -9,9 +7,7 @@ import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.media.MediaPlayer;
 import android.os.Build;
-import android.os.Handler;
 import android.os.SystemClock;
-import android.speech.RecognizerIntent;
 import android.support.annotation.Nullable;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
@@ -23,7 +19,6 @@ import android.view.View;
 import android.widget.Chronometer;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import org.json.JSONException;
 
@@ -236,10 +231,12 @@ public class SeleccionarColores extends AppCompatActivity {
     }
 
     private void mostrarAnimacion(){
+        Log.d(APP, "Class SeleccionarColores, mostrarAnimacion");
         ImageView animacion = findViewById(R.id.animacion);
         animacion.setBackgroundResource(R.drawable.animacion_estrellas);
         AnimationDrawable fondoAnimado = (AnimationDrawable) animacion.getBackground();
         fondoAnimado.start();
+        Log.d(APP, "XX");
     }
 
     private void agregarPuntuacion(){
@@ -259,10 +256,10 @@ public class SeleccionarColores extends AppCompatActivity {
     }
 
     public void empezar(View view) {
+        Log.d(APP, "Class SeleccionarColores, empezar");
         if (segundos > 0){
             volverAJugar();
         }
-        Log.d(APP, "Class SeleccionarColores, empezar");
         getSupportActionBar().hide();//ocultamos la barra superior en el momento de empezar la partida
         view.setVisibility(view.INVISIBLE); // INVISIBLE lo oculta, GONE lo borra del mapa
         view.setTag(true);
@@ -307,8 +304,8 @@ public class SeleccionarColores extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         Log.d(APP, "Class SeleccionarColores, onCreateOptionsMenu");
-        getMenuInflater().inflate(R.menu.menu, menu);
-        //menu.add(1, 1, 1, usuario);
+        getMenuInflater().inflate(R.menu.menu_superior, menu);
+        //menu_superior.add(1, 1, 1, usuario);
         Log.d(APP, "XX");
         return super.onCreateOptionsMenu(menu);
     }

@@ -2,6 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="basico.android.cctic.edu.cajascolor">
 
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS"></uses-permission>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"></uses-permission>
+
     <!-- <uses-permission android:name="android.permission.CAMERA"/> -->
     <application
         android:allowBackup="true"
@@ -20,7 +24,19 @@
             </intent-filter>
         </activity>
         <activity android:name=".VerPuntuaciones" />
-        <activity android:name=".VerPuntuacion"></activity>
+        <activity android:name=".VerPuntuacion" />
+
+        <receiver
+            android:name=".InicioMovilReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+
+        <activity android:name=".BuenosDiasActivity" />
+        <activity android:name=".EjemploPermisosCuentas"></activity>
     </application>
 
 </manifest>

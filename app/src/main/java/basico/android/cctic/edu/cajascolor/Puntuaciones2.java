@@ -58,6 +58,7 @@ public class Puntuaciones2 {
     }
 
     public void setPuntuacion(String nombre, int puntuacion, Context context) {
+        Log.d(APP, "Class Puntuaciones2, setPuntuacion");
         puntuaciones.add(new Puntuacion(nombre, puntuacion));
         //this.puntuaciones = puntuaciones;
         guardarPuntuaciones(context);

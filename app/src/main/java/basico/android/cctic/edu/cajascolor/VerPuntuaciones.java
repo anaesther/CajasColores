@@ -61,27 +61,34 @@ public class VerPuntuaciones extends AppCompatActivity {
         if (id_item == android.R.id.home) {
             finish();
         }
+        Log.d(APP, "XX");
         return super.onOptionsItemSelected(item);
     }
 
     public void ordenarPorNombre(View v){
+        Log.d(APP, "Class VerPuntuaciones, ordenarPorNombre");
         Collections.sort(datos, new ComparadorPuntuaciones());
         adaptador = new AdapterPuntuaciones(datos, this);
         repintarPuntuaciones();
+        Log.d(APP, "XX");
     }
 
     public void ordenarPorTiempo(View v){
+        Log.d(APP, "Class VerPuntuaciones, ordenarPorTiempo");
         Collections.sort(datos);
         adaptador = new AdapterPuntuaciones(datos, this);
         repintarPuntuaciones();
+        Log.d(APP, "XX");
     }
 
     private void repintarPuntuaciones(){
+        Log.d(APP, "Class VerPuntuaciones, repintarPuntuaciones");
         adaptador = new AdapterPuntuaciones(datos, this);
         recView = (RecyclerView) findViewById(R.id.recycler);
         recView.setAdapter(adaptador);//mostrando la lista
         recView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
         if (recView.getItemDecorationCount() == 0)
             recView.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL));
+        Log.d(APP, "XX");
     }
 }
